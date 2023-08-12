@@ -19,14 +19,15 @@ import com.example.plantapp.databinding.FragmentSecondBinding
 class SecondFragment : Fragment() {
 
     private lateinit var binding: FragmentSecondBinding
-    private val viewModel : FlowersViewModel by activityViewModels()
+    private val viewModel: FlowersViewModel by activityViewModels()
     private var flowerId: Int = 0
     private var flowerNombre: String = ""
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?): View {
+        savedInstanceState: Bundle?
+    ): View {
         binding = FragmentSecondBinding.inflate(inflater, container, false)
         return binding.root
 
@@ -39,7 +40,7 @@ class SecondFragment : Fragment() {
             flowerNombre = bundle.getString("FlowerName").toString()
             Log.d("bundle", "Bundle recibido: flowerid=$flowerId, flowerNombre=$flowerNombre")
         }
-        flowerId.let { id->
+        flowerId.let { id ->
             viewModel.getFlowersDetailsByIdFromInternet(id)
         }
 
@@ -50,10 +51,11 @@ class SecondFragment : Fragment() {
                     binding.root.context.getString(R.string.NombreDetalles, flowerDetails.nombre)
                 binding.textTipoD.text =
                     binding.root.context.getString(R.string.TipoDetalles, flowerDetails.tipo)
-                binding.textDescripcionD.text = binding.root.context.getString(
-                    R.string.DescripcionDetalles,
-                    flowerDetails.descripcion
-                )
+                binding.textDescripcionD.text =
+                    binding.root.context.getString(
+                        R.string.DescripcionDetalles,
+                        flowerDetails.descripcion
+                    )
 
                 binding.fab.setOnClickListener {
                     enviarCorreo(flowerNombre)
@@ -63,7 +65,8 @@ class SecondFragment : Fragment() {
         }
 
     }
-    fun enviarCorreo( nombre: String) {
+
+    fun enviarCorreo(nombre: String) {
         Log.d("fun", "funcion enviar correo")
         val recipientEmail = "luci@plantapp.cl"
         val subject = "Consulta por Producto $nombre"

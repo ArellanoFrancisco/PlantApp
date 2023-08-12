@@ -1,6 +1,6 @@
 package com.example.plantapp.Model.Remote.FromInternet
 
-data class DetailsFlower (
+data class DetailsFlower(
 
     val id: Int,
     val nombre: String,

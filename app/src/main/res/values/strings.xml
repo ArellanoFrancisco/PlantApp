@@ -1,12 +1,11 @@
 <resources>
     <string name="app_name">PlantApp</string>
-    <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">Lista de Plantas</string>
-    <string name="second_fragment_label">Detalles</string>
-    <string name="NombreRv">Nombre:  %1$s </string>
-    <string name="TipoRv">Tipo:  %1$s  </string>
-    <string name="NombreDetalles">Nombre:  %1$s  </string>
-    <string name="TipoDetalles">Tipo:  %1$s  </string>
-    <string name="DescripcionDetalles">Descripcion: \n \n %1$s </string>
+    <string name="second_fragment_label">detail</string>
+    <string name="NombreRv">Name:  %1$s </string>
+    <string name="TipoRv">Type:  %1$s  </string>
+    <string name="NombreDetalles">Name:  %1$s  </string>
+    <string name="TipoDetalles">Type:  %1$s  </string>
+    <string name="DescripcionDetalles">Description: \n\n %1$s </string>
 </resources>

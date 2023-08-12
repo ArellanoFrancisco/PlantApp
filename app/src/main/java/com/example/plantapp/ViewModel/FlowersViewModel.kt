@@ -12,12 +12,12 @@ import kotlinx.coroutines.launch
 
 class FlowersViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val repository : FlowerRepository
-    private var idSelected : Int = 0
+    private val repository: FlowerRepository
+    private var idSelected: Int = 0
 
-    init{
-        val bd= FlowerDataBase.getdatabase(application)
-        val Dao= bd.getFlowerDao()
+    init {
+        val bd = FlowerDataBase.getdatabase(application)
+        val Dao = bd.getFlowerDao()
         repository = FlowerRepository(Dao)
         viewModelScope.launch {
             repository.fetchList()
@@ -29,10 +29,11 @@ class FlowersViewModel(application: Application) : AndroidViewModel(application)
     fun getFlowersList(): LiveData<List<FlowerList>> = repository.flowerListLiveData
 
 
-    fun getFlowersDetailsByIdFromInternet(id: Int)= viewModelScope.launch {
+    fun getFlowersDetailsByIdFromInternet(id: Int) = viewModelScope.launch {
         idSelected = id
         repository.fetchFlowerDetails(id)
 
     }
+
     fun getFlowersDetail(): LiveData<FlowerDetails> = repository.getFlowersDetailsById(idSelected)
 }

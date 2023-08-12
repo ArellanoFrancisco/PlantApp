@@ -18,10 +18,11 @@ import com.example.plantapp.databinding.FragmentFirstBinding
 class FirstFragment : Fragment() {
 
     private lateinit var binding: FragmentFirstBinding
-    private val viewModel : FlowersViewModel by activityViewModels()
+    private val viewModel: FlowersViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle? ): View {
+        savedInstanceState: Bundle?
+    ): View {
         binding = FragmentFirstBinding.inflate(inflater, container, false)
         return binding.root
 
@@ -39,7 +40,7 @@ class FirstFragment : Fragment() {
                 adapter.update(it)
             }
         }
-        adapter.selectedFlower().observe(viewLifecycleOwner){
+        adapter.selectedFlower().observe(viewLifecycleOwner) {
             it?.let {
                 // válidar si capta la seleccion
                 Log.d("FlowerChoose", it.id.toString())

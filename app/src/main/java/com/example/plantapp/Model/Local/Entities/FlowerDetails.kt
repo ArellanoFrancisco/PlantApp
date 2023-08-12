@@ -3,8 +3,8 @@ package com.example.plantapp.Model.Local.Entities
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity (tableName = "Details_Flowers")
-data class FlowerDetails (
+@Entity(tableName = "Details_Flowers")
+data class FlowerDetails(
     @PrimaryKey
     val id: Int,
     val nombre: String,

@@ -13,35 +13,36 @@ import com.example.plantapp.R
 import com.example.plantapp.databinding.FlowerlistBinding
 
 
-class ListsAdapter: RecyclerView.Adapter<ListsAdapter.viewholder>() {
+class ListsAdapter : RecyclerView.Adapter<ListsAdapter.viewholder>() {
 
     private var listFlowers = listOf<FlowerList>()
     private val selectedFlower = MutableLiveData<FlowerList>()
     fun selectedFlower(): LiveData<FlowerList> = selectedFlower
 
-    inner class viewholder (private val binding: FlowerlistBinding) : RecyclerView.ViewHolder(binding.root), View.OnClickListener{
+    inner class viewholder(private val binding: FlowerlistBinding) :
+        RecyclerView.ViewHolder(binding.root), View.OnClickListener {
 
-        fun bind(list: FlowerList){
+        fun bind(list: FlowerList) {
 
             Glide.with(binding.imageRv).load(list.imagen).centerCrop().into(binding.imageRv)
             binding.textNameRV.text = binding.root.context.getString(R.string.NombreRv, list.nombre)
-            binding.textTipoRV.text= binding.root.context.getString(R.string.TipoRv, list.tipo)
+            binding.textTipoRV.text = binding.root.context.getString(R.string.TipoRv, list.tipo)
             itemView.setOnClickListener(this)
 
         }
+
         override fun onClick(v: View) {
 
-            selectedFlower.value= listFlowers[bindingAdapterPosition]
-            Log.d("ONCLICK",bindingAdapterPosition.toString())
+            selectedFlower.value = listFlowers[bindingAdapterPosition]
+            Log.d("ONCLICK", bindingAdapterPosition.toString())
         }
 
     }
 
-    fun update (list: List<FlowerList>){
+    fun update(list: List<FlowerList>) {
         listFlowers = list
         notifyDataSetChanged()
     }
-
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): viewholder {

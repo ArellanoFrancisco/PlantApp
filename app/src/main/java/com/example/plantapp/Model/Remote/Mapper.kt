@@ -6,11 +6,11 @@ import com.example.plantapp.Model.Remote.FromInternet.DetailsFlower
 import com.example.plantapp.Model.Remote.FromInternet.ListFlowers
 
 
-fun fromInternetListFlowers( flowerList: List<ListFlowers>) :List<FlowerList>{
+fun fromInternetListFlowers(flowerList: List<ListFlowers>): List<FlowerList> {
 
     return flowerList.map {
         FlowerList(
-            id= it.id,
+            id = it.id,
             nombre = it.nombre,
             tipo = it.tipo,
             imagen = it.imagen,
@@ -21,10 +21,10 @@ fun fromInternetListFlowers( flowerList: List<ListFlowers>) :List<FlowerList>{
 }
 
 
-fun fromInternetDetailsFlowers( detailsFlower: DetailsFlower) :FlowerDetails{
+fun fromInternetDetailsFlowers(detailsFlower: DetailsFlower): FlowerDetails {
 
     return FlowerDetails(
-        id= detailsFlower.id,
+        id = detailsFlower.id,
         nombre = detailsFlower.nombre,
         tipo = detailsFlower.tipo,
         imagen = detailsFlower.imagen,
