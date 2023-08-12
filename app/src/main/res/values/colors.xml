@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="onSurfaceVariant">#DADCE0</color>
+    <color name="Surface">#202124</color>
+    <color name="Error">#EE675c</color>
+    <color name="Primary">#AFC9E1</color>
+    <color name="PrimaryVariant">#6492C3</color>
+    <color name="Secondary">#F8E293</color>
+    <color name="SecondaryVariant">#F8D663</color>
+
 </resources>
