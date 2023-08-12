@@ -42,7 +42,7 @@ class TestInstrumentalDao {
             FlowerList(2, "Flor2", "tipo2", "imagen2", "descripcion2"),
             FlowerList(3, "Flor3", "tipo3", "imagen3", "descripcion3"),
             FlowerList(4, "Flor4", "tipo4", "imagen4", "descripcion4"),
-            FlowerList(1, "Flor5", "tipo5", "imagen5", "descripcion5")
+            FlowerList(5, "Flor5", "tipo5", "imagen5", "descripcion5")
         )
         fDao.insertAllFlowers(flowerList)
 
